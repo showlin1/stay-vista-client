@@ -18,10 +18,10 @@ const Navbar = () => {
             <Link to='/'>
               <img
                 // className='hidden md:block'
-                src='https://i.ibb.co/4ZXzmq5/logo.png'
+                src='https://i.ibb.co.com/5GmJqdx/logo-world-vista.png'
                 alt='logo'
-                width='100'
-                height='100'
+                width='150'
+                height='150'
               />
             </Link>
             {/* Dropdown Menu */}
