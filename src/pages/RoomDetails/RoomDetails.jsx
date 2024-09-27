@@ -1,11 +1,11 @@
-import Container from '../../components/Shared/Container'
-import { Helmet } from 'react-helmet-async'
-import RoomReservation from '../../components/RoomDetails/RoomReservation'
-import Heading from '../../components/Shared/Heading'
-import { useQuery } from '@tanstack/react-query'
-import LoadingSpinner from '../../components/Shared/LoadingSpinner'
-import { useParams } from 'react-router-dom'
-import useAxiosCommon from '../../hooks/useAxiosCommon'
+import Container from '../../components/Shared/Container';
+import { Helmet } from 'react-helmet-async';
+import RoomReservation from '../../components/RoomDetails/RoomReservation';
+import Heading from '../../components/Shared/Heading';
+import { useQuery } from '@tanstack/react-query';
+import LoadingSpinner from '../../components/Shared/LoadingSpinner';
+import { useParams } from 'react-router-dom';
+import useAxiosCommon from '../../hooks/useAxiosCommon';
 
 
 const RoomDetails = () => {
@@ -23,7 +23,7 @@ const RoomDetails = () => {
 
   if (isLoading) return <LoadingSpinner />
   console.log(room);
-
+  
   return (
     <Container>
       <Helmet>
