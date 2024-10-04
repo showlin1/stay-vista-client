@@ -71,6 +71,11 @@ const Sidebar = () => {
               </Link>
             </div>
           </div>
+          <div className='text-center  m-5 '>
+            <Link to='/' className='disabled:cursor-not-allowed cursor-pointer py-2 px-4 hover:bg-rose-300 bg-rose-400 rounded-xl  text-sm font-semibold'>
+              Home
+            </Link>
+          </div>
 
           {/* Nav Items */}
           <div className='flex flex-col justify-between flex-1 mt-6'>

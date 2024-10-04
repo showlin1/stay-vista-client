@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { TbFidgetSpinner } from 'react-icons/tb';
 import { categories } from '../Categories/CategoriesData';
 import { DateRange } from 'react-date-range';
@@ -5,7 +6,6 @@ const AddRoomForm = ({
     dates,
     handleDates,
     handleSubmit,
-    setImagePreview,
     imagePreview,
     imageText,
     handleImage,
@@ -58,6 +58,7 @@ const AddRoomForm = ({
                                 onChange={item => handleDates(item)}
                                 moveRangeOnFirstSelection={false}
                                 ranges={[dates]}
+                                minDate={(new Date())}
                             />
                         </div>
                     </div>

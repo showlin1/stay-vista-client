@@ -6,18 +6,20 @@ import {
   TransitionChild,
   DialogTitle,
   DialogPanel,
-} from '@headlessui/react'
+} from '@headlessui/react';
+import UpdateProfileForm from '../Form/UpdateProfileForm';
 
 
 
 const UpdateProfileModal = ({ isOpenA, closeModal }) => {
+
 
   return (
     <Transition appear show={isOpenA} as={Fragment}>
       <Dialog
         as='div'
         className='relative z-10'
-        onClose={closeModal}
+        onClose={() => closeModal(false)}
       >
         <TransitionChild
           as={Fragment}
@@ -42,30 +44,22 @@ const UpdateProfileModal = ({ isOpenA, closeModal }) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <DialogPanel className='w-full h-56 max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
+              <DialogPanel className='w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
                 <DialogTitle
                   as='h3'
                   className='text-lg font-medium text-center leading-6 text-gray-900'
                 >
-                  Update User Profile
+                  Update Room Info
                 </DialogTitle>
-                <div className='mt-4 w-full'>
-                  Update Profile
+                <div className='mt-2 w-full'>{/* Update room form */}
+                  <UpdateProfileForm/>
                 </div>
-                <hr className='mt-16 ' />
-
-                <div className='flex mt-2 justify-center gap-5'>
-                  <button
-                    type='button'
-                    className='inline-flex justify-center rounded-md border border-transparent bg-green-100 px-4 py-2 text-sm font-medium text-green-900 hover:bg-green-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2'
-
-                  >
-                    Update
-                  </button>
+                <hr className='mt-8 ' />
+                <div className='mt-2 '>
                   <button
                     type='button'
                     className='inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2'
-                    onClick={closeModal}
+                    onClick={() => closeModal(false)}
                   >
                     Cancel
                   </button>
@@ -83,7 +77,9 @@ UpdateProfileModal.propTypes = {
   user: PropTypes.object,
   modalHandler: PropTypes.func,
   setIsOpen: PropTypes.func,
+  closeModal: PropTypes.func,
   isOpen: PropTypes.bool,
+  isOpenA: PropTypes.bool,
 }
 
 export default UpdateProfileModal

@@ -65,7 +65,7 @@ const Navbar = () => {
             <div className='relative'>
               <div className='flex flex-row items-center gap-3'>
                 {/* Become A Host btn */}
-                <div className='hidden md:block'>
+                <div className='flex gap-4 hidden md:block '>
                   {/* {!user && ( */}
                   <button
                     // disabled={!user}
@@ -75,6 +75,9 @@ const Navbar = () => {
                     Host your home
                   </button>
                   {/* )} */}
+                  <Link to='/' className='cursor-pointer hover:bg-neutral-100 py-3 px-4 text-sm font-semibold rounded-full  transition'>
+                    Home
+                  </Link>
                 </div>
                 {/* Modal */}
                 <HostModal
